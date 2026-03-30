@@ -12,7 +12,8 @@
   --color-cream:       #EDE6DC;  /* fundo principal — bege bem claro */
   --color-sand:        #D9CBBB;  /* fundo secundário / cards */
   --color-warm-taupe:  #B8A693;  /* elementos de apoio / bordas suaves */
-  --color-mocha:       #9C8B78;  /* textos secundários / ícones */
+  --color-mocha:       #9C8B78;  /* ícones e elementos decorativos */
+  --color-text-secondary: #6B5C4D; /* textos secundários — contraste WCAG AA */
   --color-brown:       #7A6B5A;  /* títulos e textos principais */
   --color-dark-brown:  #5C4A36;  /* acentos fortes / CTAs / hover */
 
@@ -188,7 +189,7 @@ button {
 
 .secao__subtitulo {
   font-size: var(--text-lg);
-  color: var(--color-mocha);
+  color: var(--color-text-secondary);
   max-width: 540px;
 }
 
@@ -363,6 +364,11 @@ button {
   display: none;
 }
 
+/* CTA do menu mobile — oculto no desktop */
+.nav__cta-mobile {
+  display: none;
+}
+
 /* Hamburger */
 .hamburger {
   display: flex;
@@ -426,7 +432,8 @@ button {
   display: flex;
   align-items: center;
   padding: calc(var(--header-height) + var(--spacing-2xl)) var(--container-padding) var(--spacing-2xl);
-  background-color: var(--color-cream);
+  /* Gradiente quente para dar mais profundidade ao fundo */
+  background: linear-gradient(150deg, var(--color-white) 0%, var(--color-cream) 50%, #E0D4C4 100%);
   overflow: hidden;
   color: var(--color-dark-brown);
 }
@@ -443,25 +450,29 @@ button {
   color: var(--color-warm-taupe);
 }
 
+/* Formas com mais presença (opacidade elevada no SVG inline) */
 .shape--1 {
-  width: 600px;
-  height: 600px;
-  top: -200px;
-  right: -200px;
+  width: 700px;
+  height: 700px;
+  top: -220px;
+  right: -220px;
+  opacity: 0.9;
 }
 
 .shape--2 {
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  left: -150px;
+  width: 480px;
+  height: 480px;
+  bottom: -120px;
+  left: -180px;
+  opacity: 0.85;
 }
 
 .shape--3 {
-  width: 250px;
-  height: 250px;
-  top: 50%;
-  right: 10%;
+  width: 300px;
+  height: 300px;
+  top: 45%;
+  right: 8%;
+  opacity: 0.7;
 }
 
 .hero__content {
@@ -474,10 +485,13 @@ button {
   display: inline-block;
   font-size: var(--text-sm);
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-mocha);
-  margin-bottom: var(--spacing-sm);
+  color: var(--color-dark-brown);
+  background-color: var(--color-sand);
+  padding: 0.3rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-md);
 }
 
 .hero__title {
@@ -530,6 +544,8 @@ button {
 .sobre__foto {
   display: flex;
   justify-content: center;
+  /* Espaço extra para a moldura offset não ser cortada */
+  padding: 0 1rem 1rem 0;
 }
 
 .sobre__foto-frame {
@@ -539,6 +555,11 @@ button {
   overflow: hidden;
   background-color: var(--color-sand);
   position: relative;
+  /* Moldura dupla offset — camada de baixo em sand, contorno em warm-taupe */
+  box-shadow:
+    14px 14px 0 0 var(--color-sand),
+    14px 14px 0 2px var(--color-warm-taupe),
+    var(--shadow-md);
 }
 
 .foto-placeholder {
@@ -546,24 +567,32 @@ button {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  color: var(--color-warm-taupe);
-  padding: var(--spacing-lg);
-  text-align: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: linear-gradient(170deg, #D9CBBB 0%, #C8B8A5 100%);
 }
 
+/* Silhueta feminina em SVG inline (no HTML) — estilizada via CSS */
 .foto-placeholder svg {
-  width: 120px;
-  height: auto;
-  opacity: 0.6;
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+  display: block;
 }
 
 .foto-placeholder span {
-  font-size: var(--text-sm);
-  color: var(--color-mocha);
+  position: absolute;
+  bottom: var(--spacing-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-xs);
+  color: var(--color-brown);
   font-style: italic;
+  white-space: nowrap;
+  background: rgba(250, 248, 245, 0.75);
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-full);
 }
 
 /* Texto */
@@ -621,12 +650,25 @@ button {
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   border: 1px solid var(--color-sand);
+  border-top: 3px solid var(--color-warm-taupe); /* acento superior — varia por posição */
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
+/* Variação de acento para quebrar a uniformidade */
+.card:nth-child(2) { border-top-color: var(--color-mocha); }
+.card:nth-child(3) { border-top-color: var(--color-brown); }
+.card:nth-child(4) { border-top-color: var(--color-dark-brown); }
+.card:nth-child(5) { border-top-color: var(--color-brown); }
+.card:nth-child(6) { border-top-color: var(--color-mocha); }
+
+/* Cards pares com fundo levemente diferente */
+.card:nth-child(even) {
+  background-color: var(--color-cream);
+}
+
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
   border-color: var(--color-warm-taupe);
 }
 
@@ -655,7 +697,7 @@ button {
 
 .card__descricao {
   font-size: var(--text-sm);
-  color: var(--color-mocha);
+  color: var(--color-text-secondary);
   line-height: 1.7;
 }
 
@@ -726,7 +768,7 @@ button {
 
 .step__descricao {
   font-size: var(--text-sm);
-  color: var(--color-mocha);
+  color: var(--color-text-secondary);
   line-height: 1.7;
 }
 
@@ -825,7 +867,7 @@ button {
 
 .faq__resposta {
   padding: 0 var(--spacing-lg) var(--spacing-md);
-  color: var(--color-brown);
+  color: var(--color-text-secondary);
   font-size: var(--text-sm);
   line-height: 1.8;
   animation: fadeDown 0.25s ease;
@@ -1218,6 +1260,12 @@ button {
     font-size: var(--text-lg);
     padding: var(--spacing-md) 0;
     border-bottom: 1px solid var(--color-sand);
+    transition: color var(--transition), padding-left var(--transition);
+  }
+
+  /* Último link sem borda inferior */
+  .nav__link:last-child {
+    border-bottom: none;
   }
 
   .nav__link::after {
@@ -1227,6 +1275,25 @@ button {
   .nav__link:hover {
     color: var(--color-dark-brown);
     padding-left: 0.5rem;
-    transition: padding-left var(--transition), color var(--transition);
+  }
+
+  /* CTA interno do menu mobile */
+  .nav__cta-mobile {
+    display: block;
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    background-color: var(--color-dark-brown);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: var(--text-base);
+    padding: 0.85rem var(--spacing-md);
+    border-radius: var(--radius-full);
+    transition: background-color var(--transition);
+  }
+
+  .nav__cta-mobile:hover {
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    padding-left: var(--spacing-md); /* sobrescreve o hover do nav__link */
   }
 }

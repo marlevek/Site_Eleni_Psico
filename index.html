@@ -9,25 +9,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Básico -->
-  <meta name="description" content="Eleni Silvestre — Psicóloga Clínica especialista em Terapia Cognitiva Comportamental (TCC). Atendimento presencial e online. CRP 08/48276.">
-  <meta name="keywords" content="psicóloga, psicóloga clínica, TCC, terapia cognitiva comportamental, psicologia, saúde mental, ansiedade, depressão, Curitiba, CRP 08/48276, Eleni Silvestre">
+  <!-- TODO: Atualizar title e description com bairro/região quando definido -->
+  <meta name="description" content="Eleni Silvestre — Psicóloga Clínica em Curitiba especialista em Terapia Cognitivo-Comportamental (TCC). Atendimento presencial em Curitiba e online para todo o Brasil. CRP 08/48276.">
+  <meta name="keywords" content="psicóloga Curitiba, psicóloga clínica Curitiba, TCC Curitiba, terapia cognitivo-comportamental Curitiba, psicologia Curitiba, saúde mental Curitiba, ansiedade, depressão, CRP 08/48276, Eleni Silvestre">
   <meta name="author" content="Eleni Silvestre">
   <meta name="robots" content="index, follow">
   <meta name="language" content="pt-BR">
 
+  <!-- Canonical — evita conteúdo duplicado -->
+  <!-- TODO: Atualizar com o domínio real quando disponível -->
+  <link rel="canonical" href="https://seudominio.com.br/">
+
   <!-- Open Graph (Facebook / WhatsApp) -->
-  <meta property="og:title" content="Eleni Silvestre — Psicóloga Clínica | TCC">
-  <meta property="og:description" content="Psicóloga Clínica especialista em Terapia Cognitiva Comportamental. Agende sua consulta.">
+  <!-- TODO: Atualizar og:url e og:image com domínio e nome de arquivo reais -->
+  <meta property="og:title" content="Eleni Silvestre — Psicóloga Clínica em Curitiba | TCC">
+  <meta property="og:description" content="Psicóloga Clínica em Curitiba especialista em Terapia Cognitivo-Comportamental. Atendimento presencial e online. Agende sua consulta.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seudominio.com.br/">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:image" content="https://seudominio.com.br/img/eleni-silvestre-psicologa-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Eleni Silvestre — Psicóloga Clínica em Curitiba">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Eleni Silvestre — Psicóloga Clínica | TCC">
-  <meta name="twitter:description" content="Psicóloga Clínica especialista em Terapia Cognitiva Comportamental. Agende sua consulta.">
+  <meta name="twitter:title" content="Eleni Silvestre — Psicóloga Clínica em Curitiba | TCC">
+  <meta name="twitter:description" content="Psicóloga Clínica em Curitiba especialista em Terapia Cognitivo-Comportamental. Atendimento presencial e online.">
+  <meta name="twitter:image" content="https://seudominio.com.br/img/eleni-silvestre-psicologa-og.jpg">
 
-  <title>Eleni Silvestre — Psicóloga Clínica | TCC</title>
+  <title>Eleni Silvestre — Psicóloga Clínica em Curitiba | TCC</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -41,17 +52,38 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Schema.org JSON-LD — Dados estruturados para SEO -->
+  <!-- TODO: Atualizar url, address e telephone com dados reais -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Psychologist",
     "name": "Eleni Silvestre",
-    "description": "Psicóloga Clínica especialista em Terapia Cognitiva Comportamental (TCC)",
+    "description": "Psicóloga Clínica em Curitiba especialista em Terapia Cognitivo-Comportamental (TCC). Atendimento presencial em Curitiba e online para todo o Brasil.",
+    "url": "https://seudominio.com.br/",
+    "image": "https://seudominio.com.br/img/eleni-silvestre-psicologa-og.jpg",
     "credential": "CRP 08/48276",
-    "medicalSpecialty": "Terapia Cognitiva Comportamental",
+    "medicalSpecialty": "Terapia Cognitivo-Comportamental",
+    "telephone": "+55-41-99999-9999",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Curitiba",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Curitiba"
+      },
+      {
+        "@type": "Country",
+        "name": "Brasil",
+        "description": "Atendimento online"
+      }
+    ],
     "availableService": {
       "@type": "MedicalTherapy",
-      "name": "Terapia Cognitiva Comportamental (TCC)"
+      "name": "Terapia Cognitivo-Comportamental (TCC)"
     }
   }
   </script>
@@ -79,13 +111,20 @@
       <!-- Menu Principal (desktop) -->
       <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#inicio">Início</a></li>
           <li><a class="nav__link" href="#sobre">Sobre</a></li>
           <li><a class="nav__link" href="#especialidades">Especialidades</a></li>
           <li><a class="nav__link" href="#como-funciona">Como Funciona</a></li>
           <li><a class="nav__link" href="#faq">FAQ</a></li>
           <li><a class="nav__link" href="#contato">Contato</a></li>
         </ul>
+        <!-- TODO: Substituir o número do WhatsApp pelo número real -->
+        <a class="nav__cta-mobile"
+           href="https://wa.me/5541999999999?text=Olá%2C%20Eleni!%20Gostaria%20de%20agendar%20uma%20consulta."
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Agendar consulta via WhatsApp">
+          Agendar Consulta
+        </a>
       </nav>
 
       <!-- CTA Header -->
@@ -135,14 +174,13 @@
       </div>
 
       <div class="container hero__content">
-        <p class="hero__eyebrow reveal">Psicóloga Clínica</p>
+        <p class="hero__eyebrow reveal">Psicóloga Clínica | CRP 08/48276</p>
         <h1 class="hero__title reveal">
-          Terapia Cognitiva<br>
-          <em>Comportamental</em>
+          Psicoterapia com acolhimento,<br>
+          <em>clareza e base científica</em>
         </h1>
         <p class="hero__subtitle reveal">
-          Um espaço seguro para cuidar da sua saúde mental<br>
-          e construir uma vida com mais equilíbrio e bem-estar.
+          Atendimento psicológico com Terapia Cognitivo-Comportamental para quem busca compreender suas emoções, enfrentar a ansiedade e construir uma vida com mais equilíbrio.
         </p>
         <p class="hero__crp reveal">Eleni Silvestre — CRP 08/48276</p>
 
@@ -172,9 +210,18 @@
           <div class="sobre__foto-frame" aria-label="Foto profissional da psicóloga Eleni Silvestre">
             <!-- TODO: Substituir pela foto real. Tamanho recomendado: 600x700px, formato webp -->
             <div class="foto-placeholder" aria-hidden="true">
-              <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="60" cy="45" r="28" fill="currentColor" opacity="0.3"/>
-                <path d="M10,130 C10,95 30,80 60,80 C90,80 110,95 110,130" fill="currentColor" opacity="0.3"/>
+              <!-- Silhueta feminina — placeholder elegante até a foto real -->
+              <svg viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+                <!-- Cabelo -->
+                <path d="M160 40 C115 40 88 68 88 100 C84 90 82 112 90 118 C90 140 100 158 108 165 C108 170 106 175 104 178 C86 185 40 210 32 280 C28 310 28 360 28 400 L292 400 C292 360 292 310 288 280 C280 210 234 185 216 178 C214 175 212 170 212 165 C220 158 230 140 230 118 C238 112 236 90 232 100 C232 68 205 40 160 40 Z" fill="#B8A08A" opacity="0.55"/>
+                <!-- Rosto -->
+                <ellipse cx="160" cy="108" rx="44" ry="50" fill="#C9A98A" opacity="0.7"/>
+                <!-- Cabelo sobre o rosto -->
+                <path d="M116 90 C116 68 136 52 160 52 C184 52 204 68 204 90 C204 80 196 64 160 64 C124 64 116 80 116 90 Z" fill="#7A5C42" opacity="0.45"/>
+                <!-- Pescoço -->
+                <rect x="148" y="154" width="24" height="26" rx="8" fill="#C9A98A" opacity="0.65"/>
+                <!-- Ombros / roupa -->
+                <path d="M100 178 C72 190 40 218 32 280 L288 280 C280 218 248 190 220 178 C210 185 186 196 160 196 C134 196 110 185 100 178 Z" fill="#9C8B78" opacity="0.45"/>
               </svg>
               <span>Foto profissional</span>
             </div>
