@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: Atualizar a URL do sitemap quando o domínio for definido
+Sitemap: https://seudominio.com.br/sitemap.xml
