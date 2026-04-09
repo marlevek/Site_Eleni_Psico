@@ -605,6 +605,14 @@ button {
   border-radius: var(--radius-xl);
 }
 
+/* CRP no título — usa fonte do corpo para numerais limpos */
+.sobre__titulo-crp {
+  font-family: var(--font-corpo);
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 /* Texto */
 .sobre__paragrafo {
   color: var(--color-brown);
@@ -895,13 +903,14 @@ button {
   font-weight: 600;
   color: var(--color-dark-brown);
   margin-bottom: var(--spacing-xs);
+  text-align: left;
 }
 
 .step__descricao {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: 1.7;
-  text-align: justify;
+  text-align: left;
 }
 
 
@@ -1075,7 +1084,7 @@ button {
   color: var(--color-sand);
   line-height: 1.7;
   margin-bottom: var(--spacing-md);
-  text-align: justify;
+  text-align: left;
 }
 
 .contato__cta-intro {
