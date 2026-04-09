@@ -595,11 +595,22 @@ button {
   border-radius: var(--radius-full);
 }
 
+/* Foto real */
+.sobre__foto-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: var(--radius-xl);
+}
+
 /* Texto */
 .sobre__paragrafo {
   color: var(--color-brown);
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
+  text-align: justify;
 }
 
 .sobre__credencial {
@@ -627,6 +638,25 @@ button {
 
 .sobre__credencial strong {
   color: var(--color-dark-brown);
+}
+
+
+/* ===================================================
+   9b. HERO — Elementos adicionais
+=================================================== */
+.hero__cta-intro {
+  font-size: var(--text-sm);
+  color: var(--color-brown);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.02em;
+}
+
+.hero__disclaimer {
+  font-size: var(--text-xs);
+  color: var(--color-mocha);
+  margin-top: var(--spacing-sm);
+  font-style: normal;
 }
 
 
@@ -702,6 +732,107 @@ button {
 }
 
 
+/* Lista de indicações — substitui o grid de cards */
+.especialidades__lista {
+  list-style: none;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.especialidades__lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: var(--text-lg);
+  color: var(--color-brown);
+  line-height: 1.6;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-dark-brown);
+}
+
+.especialidades__lista li::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-dark-brown);
+  margin-top: 0.55em;
+}
+
+
+/* ===================================================
+   10b. CTA INTERMEDIÁRIO — Cuide da sua saúde mental
+=================================================== */
+.cta-saude {
+  padding: var(--spacing-3xl) var(--container-padding);
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-sand);
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.cta-saude__inner {
+  max-width: 680px;
+}
+
+.cta-saude__titulo {
+  font-family: var(--font-titulo);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-dark-brown);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+}
+
+.cta-saude__texto {
+  font-size: var(--text-lg);
+  color: var(--color-brown);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+}
+
+.cta-saude__intro {
+  font-size: var(--text-base);
+  color: var(--color-brown);
+  font-weight: 500;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cta-saude__link {
+  display: inline-block;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-whatsapp);
+  text-decoration: none;
+  margin-bottom: var(--spacing-md);
+  transition: color var(--transition);
+}
+
+.cta-saude__link:hover {
+  color: var(--color-whatsapp-hover);
+}
+
+.cta-saude__disclaimer {
+  font-size: var(--text-sm);
+  color: var(--color-mocha);
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .cta-saude__titulo {
+    font-size: var(--text-4xl);
+  }
+}
+
+
 /* ===================================================
    11. COMO FUNCIONA
 =================================================== */
@@ -770,6 +901,32 @@ button {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: 1.7;
+  text-align: justify;
+}
+
+
+/* Parágrafos descritivos da seção Como Funciona */
+.como-funciona__descricao {
+  max-width: 720px;
+  margin: 0 auto var(--spacing-xl);
+  text-align: justify;
+}
+
+.como-funciona__descricao p {
+  font-size: var(--text-base);
+  color: var(--color-brown);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-sm);
+}
+
+.como-funciona__descricao p:last-child {
+  margin-bottom: 0;
+}
+
+/* Parágrafo após os steps */
+.steps + .como-funciona__descricao {
+  margin-top: var(--spacing-xl);
+  margin-bottom: 0;
 }
 
 
@@ -917,7 +1074,23 @@ button {
   font-size: var(--text-lg);
   color: var(--color-sand);
   line-height: 1.7;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+}
+
+.contato__cta-intro {
+  font-size: var(--text-base);
+  color: var(--color-warm-taupe);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.contato__disclaimer {
+  font-size: var(--text-xs);
+  color: var(--color-warm-taupe);
+  margin-top: var(--spacing-sm);
+  font-style: normal;
 }
 
 /* Informações de contato */
@@ -1121,9 +1294,13 @@ button {
     gap: var(--spacing-2xl);
   }
 
-  /* Steps */
+  /* Steps — 2 colunas no tablet, ícone alinhado ao topo de cada card */
   .steps {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step {
+    align-items: flex-start;
   }
 
   /* Contato */
@@ -1142,20 +1319,36 @@ button {
 
   .steps {
     grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
   }
 
+  /* No desktop, usa flexbox para garantir ícones alinhados em todos os cards */
   .step {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: var(--spacing-md);
   }
 
+  /* Altura fixa garante que o ícone começa sempre na mesma posição em todos os cards */
   .step__numero {
     font-size: var(--text-5xl);
     min-width: auto;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 
   .step__icone {
-    margin: 0 auto;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .step__conteudo {
+    width: 100%;
   }
 }
 
