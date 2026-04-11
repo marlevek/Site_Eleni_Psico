@@ -109,7 +109,7 @@
       <!-- Menu Principal (desktop) -->
       <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre Mim</a></li>
           <li><a class="nav__link" href="#especialidades">Especialidades</a></li>
           <li><a class="nav__link" href="#como-funciona">Como Funciona</a></li>
           <li><a class="nav__link" href="#faq">FAQ</a></li>
@@ -173,7 +173,7 @@
 
       <div class="container hero__content">
         <h1 class="hero__title reveal">
-          Psicoterapia para quem busca compreender, com profundidade, seus padrões emocionais e construir relações mais conscientes.
+          Psicoterapia para quem busca compreender, com profundidade, <em>seus padrões emocionais e construir relações mais conscientes.</em>
         </h1>
         <p class="hero__subtitle reveal">
           Atendimento psicológico individual, com base na Terapia Cognitivo-Comportamental, voltado à transformação de padrões que impactam sua forma de sentir, pensar e se relacionar.
@@ -205,7 +205,7 @@
         <!-- Foto profissional -->
         <div class="sobre__foto reveal">
           <div class="sobre__foto-frame" aria-label="Foto profissional da psicóloga Eleni Silvestre">
-            <img src="img/foto_Eleni.JPEG"
+            <img src="img/Eleni.png"
                  alt="Eleni Silvestre, psicóloga clínica especialista em Terapia Cognitivo-Comportamental"
                  loading="lazy"
                  width="320"
@@ -254,15 +254,94 @@
 
         <div class="secao__header">
           <h2 class="secao__titulo reveal">Como posso te ajudar</h2>
-          <p class="secao__subtitulo reveal">Este atendimento é indicado para pessoas que:</p>
+          <p class="secao__subtitulo reveal">A Terapia Cognitiva Comportamental oferece ferramentas práticas para diversas situações da vida.</p>
         </div>
 
-        <ul class="especialidades__lista reveal" aria-label="Indicações do atendimento">
-          <li>Desejam compreender seus padrões emocionais com profundidade</li>
-          <li>Estão dispostas a se implicar no próprio processo terapêutico</li>
-          <li>Buscam mudanças consistentes, e não apenas alívio imediato</li>
-          <li>Valorizam um acompanhamento psicológico estruturado e direcionado</li>
-        </ul>
+        <div class="especialidades__grid">
+
+          <!-- Card 1: Ansiedade -->
+          <article class="card reveal" aria-label="Especialidade: Ansiedade e Estresse">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M24 14v10l6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card__titulo">Ansiedade e Estresse</h3>
+            <p class="card__descricao">Aprenda a identificar e modificar padrões de pensamento que alimentam a ansiedade, desenvolvendo estratégias práticas para lidar com o estresse do dia a dia.</p>
+          </article>
+
+          <!-- Card 2: Depressão -->
+          <article class="card reveal" aria-label="Especialidade: Depressão">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8C15.163 8 8 15.163 8 24s7.163 16 16 16 16-7.163 16-16S32.837 8 24 8z" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M16 30s2-4 8-4 8 4 8 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="18" cy="22" r="1.5" fill="currentColor"/>
+                <circle cx="30" cy="22" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="card__titulo">Depressão</h3>
+            <p class="card__descricao">Suporte especializado para enfrentar a depressão, restaurando a motivação, o prazer nas atividades e a qualidade de vida com um olhar cuidadoso e científico.</p>
+          </article>
+
+          <!-- Card 3: Autoestima -->
+          <article class="card reveal" aria-label="Especialidade: Autoestima e Autoconhecimento">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8l4.5 9.1 10.1 1.5-7.3 7.1 1.7 10-9-4.7-9 4.7 1.7-10L9.4 18.6l10.1-1.5L24 8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__titulo">Autoestima e Autoconhecimento</h3>
+            <p class="card__descricao">Desenvolva uma relação mais saudável consigo mesmo, fortalecendo a autoconfiança e descobrindo seus valores, potenciais e limites pessoais.</p>
+          </article>
+
+          <!-- Card 4: Relacionamentos -->
+          <article class="card reveal" aria-label="Especialidade: Relacionamentos">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 38s-14-9.3-14-18a8 8 0 0116 0 8 8 0 0116 0c0 8.7-14 18-14 18z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__titulo">Relacionamentos</h3>
+            <p class="card__descricao">Trabalhe conflitos, padrões relacionais e comunicação nas relações afetivas, familiares e sociais, promovendo conexões mais saudáveis e significativas.</p>
+          </article>
+
+          <!-- Card 5: Luto -->
+          <article class="card reveal" aria-label="Especialidade: Luto e Perdas">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 10C24 10 14 20 14 28a10 10 0 0020 0c0-8-10-18-10-18z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__titulo">Luto e Perdas</h3>
+            <p class="card__descricao">Acompanhamento sensível e especializado para atravessar processos de luto e perdas, respeitando o seu tempo e encontrando caminhos para seguir em frente.</p>
+          </article>
+
+          <!-- Card 6: Desenvolvimento Pessoal -->
+          <article class="card reveal" aria-label="Especialidade: Desenvolvimento Pessoal">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8v32M8 24h32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <h3 class="card__titulo">Desenvolvimento Pessoal</h3>
+            <p class="card__descricao">Identifique objetivos, supere bloqueios e construa hábitos que favorecem seu crescimento pessoal e profissional com clareza e propósito.</p>
+          </article>
+
+        </div>
+
+        <!-- Indicações do atendimento -->
+        <div class="especialidades__indicacoes">
+          <p class="especialidades__indicacoes-titulo reveal">Este atendimento é indicado para pessoas que:</p>
+          <ul class="especialidades__lista reveal" aria-label="Indicações do atendimento">
+            <li>Desejam compreender seus padrões emocionais com profundidade</li>
+            <li>Estão dispostas a se implicar no próprio processo terapêutico</li>
+            <li>Buscam mudanças consistentes, e não apenas alívio imediato</li>
+            <li>Valorizam um acompanhamento psicológico estruturado e direcionado</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -526,7 +605,7 @@
       <nav class="footer__nav" aria-label="Links do rodapé">
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#sobre">Sobre Mim</a></li>
           <li><a href="#especialidades">Especialidades</a></li>
           <li><a href="#como-funciona">Como Funciona</a></li>
           <li><a href="#faq">FAQ</a></li>

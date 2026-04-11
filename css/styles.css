@@ -496,10 +496,10 @@ button {
 
 .hero__title {
   font-family: var(--font-titulo);
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
   font-weight: 700;
   color: var(--color-dark-brown);
-  line-height: 1.1;
+  line-height: 1.25;
   margin-bottom: var(--spacing-md);
 }
 
@@ -741,6 +741,19 @@ button {
 
 
 /* Lista de indicações — substitui o grid de cards */
+/* Bloco "Este atendimento é indicado para..." */
+.especialidades__indicacoes {
+  margin-top: var(--spacing-3xl);
+}
+
+.especialidades__indicacoes-titulo {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-dark-brown);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
 .especialidades__lista {
   list-style: none;
   max-width: 680px;
@@ -786,7 +799,7 @@ button {
 }
 
 .cta-saude__inner {
-  max-width: 680px;
+  text-align: left;
 }
 
 .cta-saude__titulo {
@@ -803,7 +816,7 @@ button {
   color: var(--color-brown);
   line-height: 1.8;
   margin-bottom: var(--spacing-md);
-  text-align: justify;
+  text-align: left;
 }
 
 .cta-saude__intro {
@@ -916,9 +929,9 @@ button {
 
 /* Parágrafos descritivos da seção Como Funciona */
 .como-funciona__descricao {
-  max-width: 720px;
-  margin: 0 auto var(--spacing-xl);
-  text-align: justify;
+  max-width: 100%;
+  margin: 0 0 var(--spacing-xl);
+  text-align: left;
 }
 
 .como-funciona__descricao p {
@@ -926,6 +939,7 @@ button {
   color: var(--color-brown);
   line-height: 1.8;
   margin-bottom: var(--spacing-sm);
+  text-wrap: pretty;
 }
 
 .como-funciona__descricao p:last-child {
@@ -947,9 +961,40 @@ button {
   background-color: var(--color-white);
 }
 
+/* Alinhamento à esquerda no cabeçalho do FAQ */
+.faq .secao__header {
+  text-align: left;
+}
+
+.faq .secao__header .secao__subtitulo {
+  margin: 0;
+}
+
+/* Alinhamento à esquerda no cabeçalho de Como Funciona */
+.como-funciona .secao__header {
+  text-align: left;
+}
+
+.como-funciona .secao__header .secao__subtitulo {
+  margin: 0;
+  max-width: 100%;
+  text-wrap: pretty;
+}
+
+/* Alinhamento à esquerda no cabeçalho de Especialidades */
+.especialidades .secao__header {
+  text-align: left;
+}
+
+.especialidades .secao__header .secao__subtitulo {
+  margin: 0;
+  max-width: 100%;
+  text-wrap: pretty;
+}
+
 .faq__lista {
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
