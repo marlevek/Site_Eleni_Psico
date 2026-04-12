@@ -24,6 +24,8 @@
   /* WhatsApp */
   --color-whatsapp:    #25D366;
   --color-whatsapp-hover: #1ebe5d;
+  --color-whatsapp-soft: #6f8f7a;
+  --color-whatsapp-soft-hover: #5f7d69;
 
   /* Tipografia */
   --font-titulo:   'Playfair Display', Georgia, serif;
@@ -496,7 +498,7 @@ button {
 
 .hero__title {
   font-family: var(--font-titulo);
-  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
   font-weight: 700;
   color: var(--color-dark-brown);
   line-height: 1.25;
@@ -606,11 +608,18 @@ button {
 }
 
 /* CRP no título — usa fonte do corpo para numerais limpos */
+.sobre__titulo-nome {
+  display: block;
+}
+
 .sobre__titulo-crp {
+  display: block;
+  margin-top: 0.35rem;
   font-family: var(--font-corpo);
-  font-size: 0.85em;
+  font-size: 0.48em;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Texto */
@@ -937,8 +946,8 @@ button {
 .como-funciona__descricao p {
   font-size: var(--text-base);
   color: var(--color-brown);
-  line-height: 1.8;
-  margin-bottom: var(--spacing-sm);
+  line-height: 1.5;
+  margin-bottom: 0.45rem;
   text-wrap: pretty;
 }
 
@@ -973,11 +982,13 @@ button {
 /* Alinhamento à esquerda no cabeçalho de Como Funciona */
 .como-funciona .secao__header {
   text-align: left;
+  margin-bottom: 0.65rem;
 }
 
 .como-funciona .secao__header .secao__subtitulo {
   margin: 0;
   max-width: 100%;
+  line-height: 1.45;
   text-wrap: pretty;
 }
 
@@ -1127,9 +1138,13 @@ button {
 .contato__texto {
   font-size: var(--text-lg);
   color: var(--color-sand);
-  line-height: 1.7;
-  margin-bottom: var(--spacing-md);
+  line-height: 1.45;
+  margin-bottom: 0.25rem;
   text-align: left;
+}
+
+.contato__texto:last-of-type {
+  margin-bottom: 0;
 }
 
 .contato__cta-intro {
@@ -1138,6 +1153,14 @@ button {
   font-weight: 500;
   margin-bottom: var(--spacing-sm);
   margin-top: var(--spacing-lg);
+}
+
+.contato .btn--whatsapp {
+  background-color: var(--color-whatsapp-soft);
+}
+
+.contato .btn--whatsapp:hover {
+  background-color: var(--color-whatsapp-soft-hover);
 }
 
 .contato__disclaimer {
@@ -1250,20 +1273,20 @@ button {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  background-color: var(--color-whatsapp);
+  background-color: var(--color-whatsapp-soft);
   color: #fff;
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 4px 20px rgba(111, 143, 122, 0.28);
   transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
   font-weight: 600;
   font-size: var(--text-sm);
 }
 
 .whatsapp-float:hover {
-  background-color: var(--color-whatsapp-hover);
+  background-color: var(--color-whatsapp-soft-hover);
   transform: translateY(-3px);
-  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 6px 24px rgba(95, 125, 105, 0.34);
 }
 
 .whatsapp-float svg {
