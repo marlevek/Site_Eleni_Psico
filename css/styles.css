@@ -306,23 +306,22 @@ button {
 /* Logo */
 .logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  align-items: center;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.logo__name {
-  font-family: var(--font-titulo);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-dark-brown);
+.logo__img {
+  height: 62px;
+  width: auto;
+  display: block;
+  filter: contrast(2.5) brightness(0.8);
 }
 
-.logo__crp {
-  font-size: var(--text-xs);
-  color: var(--color-mocha);
-  letter-spacing: 0.05em;
+@media (max-width: 768px) {
+  .logo__img {
+    height: 48px;
+  }
 }
 
 /* Navegação desktop */
