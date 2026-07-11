@@ -39,7 +39,7 @@ Site_Eleni/
 
 ### Trocar o número do WhatsApp
 
-Pesquise por `5541999999999` no arquivo `index.html` e substitua pelo número real em formato internacional (55 + DDD + número, sem espaços ou símbolos).
+O número atual é **(41) 98746-2192**. Todos os botões e links de WhatsApp usam o link direto `https://wa.me/5541987462192` (formato internacional: 55 + DDD + número, sem espaços ou símbolos). Para trocar, pesquise por `5541987462192` no arquivo `index.html` e substitua em todas as ocorrências, incluindo o número visível na seção Contato **(41) 98746-2192**.
 
 ### Trocar textos placeholder
 
