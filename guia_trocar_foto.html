@@ -1,0 +1,239 @@
+<title>Como trocar a foto do site — Eleni Silvestre</title>
+<style>
+  :root{
+    --cream:#EDE6DC; --sand:#D9CBBB; --taupe:#B8A693; --mocha:#9C8B78;
+    --brown:#7A6B5A; --dark:#5C4A36; --white:#FAF8F5;
+    --ink:#4a3d2e; --soft:#6B5C4D;
+    --bg:var(--cream); --card:var(--white); --line:var(--taupe);
+    --title:var(--dark); --text:var(--ink); --muted:var(--soft);
+    --accent:#5C4A36; --accent-soft:#EFE7DB;
+    --tip-bg:#E7EFE4; --tip-line:#8FA980; --tip-ink:#3f5136;
+    --warn-bg:#F4E9DD; --warn-line:#C79A6A; --warn-ink:#7a5326;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1c1712; --card:#26201a; --line:#4a3d2f;
+      --title:#EDE6DC; --text:#E6DDCF; --muted:#B8A693;
+      --accent:#D9C4A8; --accent-soft:#332a20;
+      --tip-bg:#25302180; --tip-line:#7d9670; --tip-ink:#cfe0c4;
+      --warn-bg:#33271a80; --warn-line:#c79a6a; --warn-ink:#e8c79c;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#EDE6DC; --card:#FAF8F5; --line:#B8A693;
+    --title:#5C4A36; --text:#4a3d2e; --muted:#6B5C4D;
+    --accent:#5C4A36; --accent-soft:#EFE7DB;
+    --tip-bg:#E7EFE4; --tip-line:#8FA980; --tip-ink:#3f5136;
+    --warn-bg:#F4E9DD; --warn-line:#C79A6A; --warn-ink:#7a5326;
+  }
+  :root[data-theme="dark"]{
+    --bg:#1c1712; --card:#26201a; --line:#4a3d2f;
+    --title:#EDE6DC; --text:#E6DDCF; --muted:#B8A693;
+    --accent:#D9C4A8; --accent-soft:#332a20;
+    --tip-bg:#25302180; --tip-line:#7d9670; --tip-ink:#cfe0c4;
+    --warn-bg:#33271a80; --warn-line:#c79a6a; --warn-ink:#e8c79c;
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  .page{
+    background:var(--bg); color:var(--text);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    font-size:17px; line-height:1.6;
+    padding:48px 20px 72px;
+    min-height:100vh;
+  }
+  .wrap{max-width:720px; margin:0 auto;}
+
+  header.hero{margin-bottom:40px;}
+  .eyebrow{
+    font-size:.78rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--mocha); font-weight:700; margin:0 0 12px;
+  }
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:700; color:var(--title);
+    font-size:2.3rem; line-height:1.12; margin:0 0 14px;
+    text-wrap:balance;
+  }
+  .lede{font-size:1.05rem; color:var(--muted); margin:0; max-width:60ch;}
+
+  h2{
+    font-family:Georgia,serif; color:var(--title);
+    font-size:1.35rem; margin:44px 0 18px; padding-bottom:10px;
+    border-bottom:1px solid var(--line); text-wrap:balance;
+  }
+
+  .steps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px;}
+  .step{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:20px 22px; display:grid; grid-template-columns:44px 1fr; gap:18px; align-items:start;
+  }
+  .num{
+    width:44px; height:44px; border-radius:50%;
+    background:var(--accent); color:var(--bg);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:1.15rem; font-family:Georgia,serif;
+  }
+  .step h3{margin:2px 0 6px; font-size:1.08rem; color:var(--title); font-weight:700;}
+  .step p{margin:0; color:var(--text);}
+  .step p + p{margin-top:8px;}
+
+  code, .file{
+    font-family:"Consolas",ui-monospace,monospace;
+    background:var(--accent-soft); color:var(--accent);
+    padding:2px 8px; border-radius:6px; font-size:.95em; font-weight:600;
+    white-space:nowrap;
+  }
+
+  .callout{
+    border-radius:12px; padding:16px 18px 16px 18px;
+    border-left:5px solid; margin:0;
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .callout .ico{font-size:1.2rem; line-height:1.4;}
+  .callout p{margin:0;}
+  .callout strong{color:inherit;}
+  .tip{background:var(--tip-bg); border-color:var(--tip-line); color:var(--tip-ink);}
+  .warn{background:var(--warn-bg); border-color:var(--warn-line); color:var(--warn-ink);}
+  .callstack{display:flex; flex-direction:column; gap:12px; margin-top:6px;}
+
+  .key{
+    background:var(--card); border:1px dashed var(--line); border-radius:12px;
+    padding:18px 20px; margin:0 0 8px;
+  }
+  .key p{margin:0 0 6px;} .key p:last-child{margin:0;}
+
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem;}
+  .kbd{
+    display:inline-block; background:var(--card); border:1px solid var(--line);
+    border-bottom-width:2px; border-radius:6px; padding:1px 8px; font-size:.9em;
+    font-family:"Consolas",monospace; color:var(--title); font-weight:600;
+  }
+  a{color:var(--accent);}
+  @media (max-width:520px){
+    h1{font-size:1.9rem;}
+    .step{grid-template-columns:38px 1fr; gap:14px; padding:18px;}
+    .num{width:38px; height:38px; font-size:1rem;}
+    .page{padding:32px 16px 56px;}
+  }
+</style>
+
+<div class="page">
+  <div class="wrap">
+
+    <header class="hero">
+      <p class="eyebrow">Guia rápido · site Eleni Silvestre</p>
+      <h1>Como trocar a sua foto do site você mesma</h1>
+      <p class="lede">Você não precisa mexer em nenhum código. O segredo é simples: subir a foto nova com o <strong>mesmo nome</strong> da atual, e o site troca sozinho. Leva uns 5 minutos.</p>
+    </header>
+
+    <section>
+      <h2>Parte 1 — Preparar a foto</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="num">1</span>
+          <div>
+            <h3>Escolha uma boa foto</h3>
+            <p>De preferência <strong>vertical (em pé)</strong>, com o rosto bem visível e boa iluminação — no mesmo estilo da foto que está no site hoje.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="num">2</span>
+          <div>
+            <h3>Dê o nome exato ao arquivo</h3>
+            <p>Renomeie a sua foto para exatamente:</p>
+            <p><span class="file">foto_Eleni_nova.jpeg</span></p>
+            <p>Esse é o passo mais importante: com o mesmo nome, o site reconhece a foto nova automaticamente.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="num">3</span>
+          <div>
+            <h3>Não precisa ser enorme</h3>
+            <p>Uma foto com cerca de <strong>900 a 1200 pixels</strong> de largura e até <strong>1–2 MB</strong> é o ideal. Fotos muito pesadas deixam o site lento.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="warn callout" style="margin-top:18px;">
+        <span class="ico">⚠️</span>
+        <p>Se a sua foto terminar em <code>.jpg</code> ou <code>.png</code> (e não <code>.jpeg</code>), salve/exporte como <strong>.jpeg</strong> antes — ou me avise que eu ajusto.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Parte 2 — Subir a foto no painel</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="num">1</span>
+          <div>
+            <h3>Entre no painel (cPanel)</h3>
+            <p>Acesse: <a href="https://psicologaelenisilvestre.com.br:2083/">psicologaelenisilvestre.com.br:2083</a> e faça login com o seu usuário e senha da hospedagem.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="num">2</span>
+          <div>
+            <h3>Abra o “Gerenciador de Arquivos”</h3>
+            <p>Procure o ícone <strong>Gerenciador de Arquivos</strong> (às vezes aparece como <em>File Manager</em>).</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="num">3</span>
+          <div>
+            <h3>Entre na pasta das imagens</h3>
+            <p>Abra a pasta do site (normalmente <span class="file">public_html</span>) e depois a pasta <span class="file">img</span>.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="num">4</span>
+          <div>
+            <h3>Guarde um backup da foto atual</h3>
+            <p>Clique na foto <span class="file">foto_Eleni_nova.jpeg</span> e baixe-a para o seu computador. Assim, se quiser voltar, é só subir de novo.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="num">5</span>
+          <div>
+            <h3>Envie a foto nova</h3>
+            <p>Clique em <strong>Enviar</strong> (ou <em>Upload</em>) e escolha a sua foto — aquela já com o nome certo.</p>
+            <p>Se aparecer um aviso perguntando se quer <strong>substituir/sobrescrever</strong>, clique em <strong>Sim</strong>.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="num">6</span>
+          <div>
+            <h3>Confira no site</h3>
+            <p>Abra o site e aperte <span class="kbd">Ctrl</span> + <span class="kbd">F5</span> para atualizar. Se a foto antiga ainda aparecer, é só o navegador lembrando dela — espere um pouquinho e atualize de novo.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Guarde estas três regras de ouro</h2>
+      <div class="callstack">
+        <div class="key">
+          <p><strong>1. Mesmo nome, sempre.</strong> A foto nova precisa se chamar <span class="file">foto_Eleni_nova.jpeg</span>. É isso que faz tudo funcionar sem mexer em código.</p>
+        </div>
+        <div class="key">
+          <p><strong>2. Backup antes de trocar.</strong> Baixe a foto atual antes de substituir. Custa 10 segundos e te salva.</p>
+        </div>
+        <div class="key">
+          <p><strong>3. Deu errado? Sem pânico.</strong> É só subir de volta a foto antiga (o backup) e tudo volta ao normal.</p>
+        </div>
+      </div>
+
+      <div class="tip callout" style="margin-top:18px;">
+        <span class="ico">💛</span>
+        <p>Qualquer dúvida na hora de fazer, me manda uma mensagem que a gente resolve juntos — ou me envia a foto que eu troco pra você.</p>
+      </div>
+    </section>
+
+    <footer>
+      Os nomes dos botões podem variar um pouco conforme o painel da hospedagem, mas a ideia é sempre a mesma: <strong>pasta <span class="file">img</span> → enviar a foto com o mesmo nome</strong>. Guia preparado para o site da Eleni Silvestre — Psicóloga.
+    </footer>
+
+  </div>
+</div>

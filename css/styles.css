@@ -311,85 +311,79 @@ button {
   flex-shrink: 0;
 }
 
-.logo--v2 {
+/* Logo da marca — reproduz o arranjo horizontal enviado pela Eleni:
+   símbolo · nome "Eleni Silvestre" (serif, 2 linhas) · credencial ao lado.
+   Texto vetorial (nítido em qualquer tela) e credencial legível. */
+.logo--marca {
   gap: 0.55rem;
   min-width: 0;
-  max-width: min(320px, 58vw);
+  max-width: min(440px, 74vw);
 }
 
 .logo__mark {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
   display: block;
   object-fit: contain;
 }
 
-.logo__texto {
+/* Logo oficial da Eleni (símbolo + "Eleni Silvestre", PNG transparente)
+   com a credencial "Psicóloga / CRP" em texto legível ao lado, separada
+   por uma divisória sutil. */
+.logo--novo {
+  gap: 0.7rem;
+  min-width: 0;
+  max-width: min(460px, 82vw);
+}
+
+.logo__img {
+  height: 58px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 1;
+}
+
+.logo__cred {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-width: 0;
-}
-
-.logo__nome {
-  font-family: var(--font-titulo);
-  font-size: 1.42rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--color-dark-brown);
-}
-
-.logo__subtitulo {
-  margin-top: 0.16rem;
+  flex-shrink: 0;
+  padding-left: 0.7rem;
+  border-left: 1px solid var(--color-warm-taupe);
   font-family: var(--font-corpo);
-  font-size: 0.68rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
   color: var(--color-text-secondary);
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
+.logo__cred-cargo { font-size: 0.82rem; }
+.logo__cred-crp   { font-size: 0.8rem; }
+
 @media (max-width: 768px) {
-  .logo--v2 {
-    gap: 0.45rem;
-    max-width: calc(100vw - 88px);
+  .logo--novo {
+    gap: 0.55rem;
+    max-width: calc(100vw - 92px);
   }
 
-  .logo__mark {
-    width: 38px;
-    height: 38px;
-    flex-basis: 38px;
-  }
+  .logo__img { height: 48px; }
 
-  .logo__nome {
-    font-size: 1.22rem;
-  }
-
-  .logo__subtitulo {
-    font-size: 0.58rem;
-  }
+  .logo__cred { padding-left: 0.55rem; }
+  .logo__cred-cargo { font-size: 0.74rem; }
+  .logo__cred-crp   { font-size: 0.72rem; }
 }
 
-@media (max-width: 360px) {
-  .logo--v2 {
-    gap: 0.35rem;
-  }
+@media (max-width: 400px) {
+  .logo--novo { gap: 0.45rem; }
 
-  .logo__mark {
-    width: 34px;
-    height: 34px;
-    flex-basis: 34px;
-  }
+  .logo__img { height: 40px; }
 
-  .logo__nome {
-    font-size: 1.08rem;
-  }
-
-  .logo__subtitulo {
-    font-size: 0.51rem;
-  }
+  .logo__cred { padding-left: 0.45rem; }
+  .logo__cred-cargo { font-size: 0.64rem; }
+  .logo__cred-crp   { font-size: 0.62rem; }
 }
 
 /* Navegação desktop */
